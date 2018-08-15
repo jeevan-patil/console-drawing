@@ -15,8 +15,8 @@ public class ClearCommand implements Command {
       }
     }
 
-    for (int row = 2; row < canvas.getHeight(); row++) {
-      for (int col = 2; col < canvas.getWidth(); col++) {
+    for (int row = 0; row < canvas.getHeight(); row++) {
+      for (int col = 0; col < canvas.getWidth(); col++) {
         canvas.getPixels()[row][col] = canvas.getEmptySpace();
       }
     }

@@ -6,9 +6,14 @@ import org.junit.Test;
 public class CommandTest {
 
   @Test
-  public void shouldProvideCorrectCommand() {
+  public void shouldProvideQuitCommand() {
     String command = Command.QUIT.getCommandInput();
     Assert.assertEquals("Q", command);
   }
 
+  @Test
+  public void shouldProviceClearCommand() {
+    String command = Command.CLEAR.getCommandInput();
+    Assert.assertEquals("C", command);
+  }
 }
