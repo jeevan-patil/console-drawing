@@ -1,6 +1,7 @@
 package xyz.jeevan.consoledrawing.drawable;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -79,6 +80,21 @@ public class Canvas implements CanvasDrawable {
     }
     builder.append(horizontalEdge);
     System.out.printf(builder.toString());
+  }
+
+  public void clear() {
+    Iterator<Drawable> iterator = this.drawables.iterator();
+    while (iterator.hasNext()) {
+      if (!(iterator.next() instanceof Canvas)) {
+        iterator.remove();
+      }
+    }
+
+    for (int row = 0; row < height; row++) {
+      for (int col = 0; col < width; col++) {
+        pixels[row][col] = EMPTY_SPACE;
+      }
+    }
   }
 
   /**
